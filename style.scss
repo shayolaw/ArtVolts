@@ -2,6 +2,7 @@ body{
 	margin:0px;
 	font-family: Sofia Pro;
 	width:100vw;
+	height:100vh;
 }
 .search{
 	display: flex;
@@ -18,19 +19,50 @@ body{
 	}
 }
 .top{
-	background:url('Images/banner-02.jpg');
 	width:100vw;
 	height:100vh;
 	background-size: cover;
-	.pic-info{
-		h2{
-		font-weight: 500;}
-		float:right;
-		color:white;
-		margin-top: 10vh;
+	#top-det{
+		position: relative;
+		z-index: 1;
+	}
+	#top-images{
+		width:100vw;
+		overflow: hidden;
+		position:absolute;
+		top:0px;
+		z-index:0;
+		#t-image{
+			display: flex;
+		}
+	}
+	img{
+		width:100vw;
+		height:100vh;
+	}
+	#pic-info{
 		margin-right:150px;
+		float:right;
+		overflow:hidden;
 		width:25vw;
+		
+	
+	}
+	.picinfo{
+
+		display: flex;
+	}
+	.pic-info{
+		width:25vw;
+		
+		h2{
+		font-weight: 500;
+		margin-top: 15vh;
+		color:white;
+		
+		width:25vw;}
 		button{
+			
 			margin-top: 10vh;
 			float:right;
 			width:200px;
@@ -41,6 +73,7 @@ body{
 			font-size:18px;
 		}
 		button:hover{
+
 		cursor: pointer;
 		border:2px solid black;
 		background-color: white;
@@ -166,7 +199,7 @@ ul{
 .values{
 			display: flex;
 			flex-direction: column;
-			width: 180px;
+			width: 15vw;
 			height: 120px;
 			align-items: center;
 						background-color: #FCF8F5;
@@ -238,13 +271,15 @@ ul{
 		margin:10vh 0px 0 40px;
 		display: flex;
 
+
 	}
 	#collection{
+		overflow: hidden;
 		width:100vw;
 		color:white;
 		position:relative;
 		top:-150px;
-		overflow: hidden;
+		
 		h2,h3{
 			margin-left: 40px;
 		}
@@ -267,8 +302,11 @@ ul{
 }
 	#categories{
 		width:100vw;
+		overflow-x: hidden;
 		margin-top: 10vh;
 		ul{
+			margin-left: 25vw;
+			width:80vw;
 			margin-top: 10vh;
 			margin-bottom: 10vh;
 			display: flex;
@@ -277,19 +315,7 @@ ul{
 			list-style: none;
 			li{
 				margin-right: 40px;
-				button{
-					float: right;
-					background-color: purple;
-					 border:0px;
-					 width:50px;
-					 height:30px;
-					 color:white;
-				}
-				button:hover{
-		cursor: pointer;
-		background-color: black;
-		color:white;
-	}
+				
 				p{
 					text-align: center;
 				}
@@ -300,6 +326,23 @@ ul{
 				}
 			}
 		}
+		.cat-but{
+				position: relative;
+				left:-20vw;
+				top:-10vh;
+					float: right;
+					background-color: purple;
+					 border:0px;
+					 width:50px;
+					 height:30px;
+					 color:white;
+				}
+				.cat-but:hover{
+		cursor: pointer;
+		background-color: black;
+		color:white;
+	}
+		
 		.track{
 	display: flex;
 	position:relative;
@@ -336,29 +379,30 @@ ul{
 	}
 	.card{
 		color:white;
-		width:350px;
+		width:30vw;
 		float:right;
 		margin-right: 40px;
-		height:487px;
+		height:457px;
 		background-color:white;
 		opacity:0.3;
 		z-index: 1;
 
 	}
 	.content{
+		opacity:0;
 		margin-top: -23px;
 		z-index: 2;
 		position:absolute;
 		color:white;
-		left:890px;
-		width:25vw;
+		left:855px;
+		width:300px;
 		float:right;
 		margin-right: 40px;
 		height:80vh;
-			opacity: 1;
 			img{
-				margin-top: 5px;
-				width:350px;
+				margin-top: 5vh;
+				width:30vw;
+				height:40vh;
 			}
 			h3{
 				margin-top:60px;
@@ -379,11 +423,21 @@ ul{
 			font-weight: 200;
 			}
 		}
+		.cactive{
+		opacity: 1;
+	}
+
 		.e-info{
 			position:relative;
 			top:80vh;
 			z-index: 1;
 			display: flex;
+			div{
+				padding-right: 20px;
+				border-right: 2px solid white;
+				margin-left:40px;
+				margin-right:40px;
+			}
 			p{
 				line-height: 50%;
 			}
@@ -507,18 +561,28 @@ footer{
 }
 @media screen and (max-width: 1270px) {
 #Layer_3{
-	transform: scaleY(1.2);
+	transform: scaleY(1.3);
 }
 #path{
 		margin-top:40vh;
-		height:11vh;
+		height:10vh;
 	}
 #categories{
-	margin-top:20vh;
+	margin-top:30vh;
+	width:100vw;
 	ul{
+		width:100vw;
+		overflow-x: scroll;
+		margin-left: 0vw;
 		display: flex;
 		justify-content: flex-start;
 	
+}
+.track{
+	display: none;
+}
+.cat-but{
+	display: none;
 }
 }
 #events{
@@ -540,12 +604,23 @@ footer{
 
 }
 @media screen and (max-width: 992px) {
+	#collection{
+		margin-top: -30px;
+		.artwork{
+			img{
+				height:200px;
+			}
+		}
+	}
 	.top{
+	#pic-info{
+		width:60vw;
+	}
 	.pic-info{
 		float: left;
-		margin-left: 40px;
+		
 		margin-right: 0px;
-		width:60vw;
+		width:100vw;
 		button{
 			float:left;
 			
@@ -554,12 +629,22 @@ footer{
 		}
 	}
 }
+
 .top{
-	.pic-info{
+	#pic-info{
+		margin-left: 10vw;
+		margin-top: -30px;
 		float: left;
-		margin-left: 40px;
+		width:40vw;
+	}
+	.pic-info{
+		width:100vw;
+		float: left;
+		
 		margin-right: 0px;
-		width:60vw;
+		h2{
+			width:40vw;
+		}
 		button{
 			float:left;
 			
@@ -582,6 +667,9 @@ footer{
 		width: 100vw;
 		height:10px;
 	}
+#artworks{
+	overflow-x: scroll;
+}
 #col-b{
 	display: none;
 }
@@ -590,10 +678,10 @@ footer{
 }
 #path{
 		margin-top:40vh;
-		height:12vh;
+		height:20vh;
 	}
 #categories{
-	margin-top: 50px;
+	margin-top: 13vh;
 	ul{
 		display: flex;
 		justify-content: flex-start;
@@ -619,12 +707,104 @@ footer{
 .second-nav{
 	padding:20px 0px 20px 0px;
 }
+#Layer_1{
+	position:relative;
+	top:-540px;
+}
 }
 
+@media screen and (max-width: 810px) {
+#events{
+	.e-info{
+		display:flex;
+		flex-direction: column;
+		position: relative;
+		top:50px;
+		div{
+			border-right:0px solid black;
+		}
+		.datem{
+			margin-left: 40px;
+			padding-right: 20px;
 
-@media screen and (max-width: 600px) {
+		}
+	}	
+	.scrolls{
+		margin-top: -150px;
+		}
+	}
+	.svgs{
+		#Layer_1{
+		position:relative;
+		top:-500px;
+		display: block;}
+	}
+	#Layer_3{
+		transform: scaleY(1.5);
+	}
+	#path{
+		margin-top:40vh;
+		height:13vh;
+	}
+	#categories{
+		margin-top: 7vh;
+	}
+}
+@media screen and (max-width: 710px){
+#pic-info{
+	width:80vw;
+	margin-left:10vw;
+}
+.pic-info{
+	width:80vw;
+	h2{
+		width:50vw;
+	}
+}
+	#Layer_3{
+	transform: scaleY(1.8);
+}
+#path{
+		margin-top:55vh;
+		height:10vh;
+	}
+
+}
+
+@media screen and (max-width: 580px) {
 	.text{
 		display: none;
+	}
+	#events{
+	margin-top: 40px;
+	height:100vh;
+	display: flex;
+	flex-direction: column;
+	.e-info{
+		div{
+			border-right:0px solid black;
+		}
+	}
+	.scrolls{
+		margin-top: -400px;
+	}
+	#contents{
+		margin-top: 20px;
+		margin-left: 20px;
+		height:30vh;
+		p{
+			width:80vw;
+		}
+		img{
+			display: none;
+		}
+	}
+	.content{
+		margin-top: 20px;
+		position:relative;
+		top:0;
+		left:-28vw;
+	}
 	}
 	.first-nav{
 		justify-content: flex-start;
@@ -643,22 +823,44 @@ footer{
 		width:300px;}
 	}
 	.top{
-	.pic-info{
-		margin-left: 40px;
-		margin-right: 0px;
+	#pic-info{
 		width:75vw;
+	}
+	.pic-info{
+		margin-left: 0px;
+		margin-right: 0px;
+		width:100vw;
 		button{
-			margin-right: 0px;
-			
+			margin-right: 0px;	
+		}
+		h2{
+			width: 80vw;
 		}
 	}
 }
+
+.about{
+	width:100vw;
+	p{
+		width:80vw;
+	}
+	.shortInfo{
+		margin-left: -40px;
+	}
+	.values{
+		width:30vw;
+		margin-right:15px;
+	}
+}
+#Layer_1{
+	opacity:0;
+}
 #Layer_3{
-	transform: scaleY(2);
+	transform: scaleY(2.1);
 }
 #path{
-		margin-top:40vh;
-		height:1vh;
+		margin-top:65vh;
+		height:0vh;
 	}
 #collection{
 	img{
@@ -674,7 +876,7 @@ footer{
 	}
 }
 #categories{
-	margin-top: 0px;
+	margin-top: 15vh;
 }
 .second-nav{
 display:flex;
@@ -699,4 +901,13 @@ ul{
 		}
 	}
 }}
+.rev{
+	flex-direction: column;
+	input,textarea{
+		width: 80vw;
+	}
+	button{
+		width:40vw;
+	}
+}
 }
